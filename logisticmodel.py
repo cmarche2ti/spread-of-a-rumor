@@ -6,8 +6,10 @@ import pandas as pd
 import texttable as tt
 import os
 
+# Clear console on start of the program
 os.system('cls' if os.name == 'nt' else 'clear')
 
+# User directions
 print('-'*20)
 print('Modeling Logistic Growth')
 print('-'*20)
@@ -38,11 +40,13 @@ num_spread = int(input('How fast does the rumor spread? '))
 print()
 num_trials = 1
 round_num = 1
+
 #Round 1
 print('The first person to hear the rumor is ....')
 trial(num_trials)
 print()
 
+# All rounds after round 1
 while len(rumor_list) != num_people:
     num_trials = len(rumor_list) * num_spread
     print(f'In Round #{round_num}, {num_trials} people will hear the rumor.')
@@ -60,6 +64,7 @@ while len(rumor_list) != num_people:
     round_num+=1
     pause()
 
+# Display results table in the console
 print()
 print('Final Results Table')
 print()
@@ -82,7 +87,7 @@ s = results_table.draw()
 print(s)
 
 
-
+# Create graph of results 
 fig = plt.figure(figsize=[6,4])
 
 axes = fig.add_axes([.1,.1,.8,.8])
@@ -92,10 +97,3 @@ axes.set_title('Spread of a Rumor')
 
 axes.plot(xlist, ylist, marker ="o", lw=2)
 plt.show()
-
-
-
-
-
-
-
