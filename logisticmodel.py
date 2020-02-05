@@ -10,9 +10,9 @@ import os
 os.system('cls' if os.name == 'nt' else 'clear')
 
 # User directions
-print('-'*20)
+print('-'*24)
 print('Modeling Logistic Growth')
-print('-'*20)
+print('-'*24)
 print('This program will model the spread of a rumor')
 print('Each program will take a number of people and a spread rate')
 print('(The number of people told the rumor each day')
